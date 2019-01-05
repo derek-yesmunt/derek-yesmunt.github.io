@@ -83,8 +83,7 @@
   <!-- About Section -->
    <div class="w3-container w3-padding-32" id="about">
      <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">About</h3>
-     <p>Whether you have a model and need a 3D print, or need a low volume production solution, or have an idea that you want to bring to life, I am here to help.
-
+     <p>Offering 3D printing and molding to provide functional prototypes in a range of materials including rigid, durable, tough, high temp., and even ceramic.
      </p>
    </div>
 
@@ -100,7 +99,8 @@
        <div class="w3-container w3-padding-32" id="contact">
          <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">Contact</h3>
          <p>Lets get in touch and talk about your next project.</p>
-         <form id="test-form">
+         <form class="gform" method="POST" data-email="derek@3dy.io"
+         action="https://script.google.com/macros/s/AKfycbwHdY0l-AP3xyJP9HBhDJJnFpynvs9lF7YxwgmkPhB3J3ceyw01/exec">
            <input class="w3-input w3-border" type="text" placeholder="Name" required name="Name">
            <input class="w3-input w3-section w3-border" type="text" placeholder="Email" required name="Email">
            <input class="w3-input w3-section w3-border" type="text" placeholder="Subject" required name="Subject">
@@ -108,6 +108,11 @@
            <button class="w3-button w3-black w3-section" type="submit">
              <i class="fa fa-paper-plane"></i> SEND MESSAGE
            </button>
+           <div style="display:none" class="thankyou_message">
+ <!-- You can customize the thankyou message by editing the code below -->
+ <h2><em>Thanks</em> for contacting us! We will get back to you soon!
+ </h2>
+</div>
          </form>
        </div>
 
@@ -121,22 +126,7 @@
 particlesJS.load("particles-js", "assets/particles.json", function() {
   console.log("callback - particles.js config loaded");
 });
-
-var $form = $('form#test-form'),
-    url = 'https://script.google.com/macros/s/AKfycbyZVEWAHsRmNiuu_R6zq0eOF90BnBbpC6YIsBQD1v-QyRGYZRk/exec'
-
-$('#submit-form').on('submit', function(e) {
-  e.preventDefault();
-  var jqxhr = $.ajax({
-    url: url,
-    method: "GET",
-    dataType: "json",
-    data: $form.serializeObject()
-  }).success(
-    // do something
-  );
-})
 </script>
-
+<script data-cfasync="false" type="text/javascript" src="assets/form-submission-handler.js"></script>
 </body>
 </html>
